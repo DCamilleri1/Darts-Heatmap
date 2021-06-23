@@ -37,8 +37,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///darts_database.db")
-
+#db = SQL("sqlite:///darts_database.db")
+db = SQL("postgres://rwprjxuswmxqsp:1f0c8376b3c156bf3be3bd551fb68872b4e1029932f0525c0dcfdb93e4f2c916@ec2-34-240-75-196.eu-west-1.compute.amazonaws.com:5432/d3k1ruoktr11a2")
 
 @app.route("/", methods = ["GET", "POST"])
 @login_required
