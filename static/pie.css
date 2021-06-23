@@ -1,0 +1,522 @@
+body {
+    background-color: #001932;
+}
+
+/*.boxes {
+    position: absolute;
+    left: 10px;
+    background-color: #006496;
+    color: white;
+    height: auto;
+    margin: auto;
+}*/
+.boxes{
+    color: white;
+}
+#container {
+    top: 0px;
+    right: 10px;
+    position: absolute;
+}
+
+/*#canvas {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: auto;
+}*/
+/*.Red_Section {
+    stroke: #FF1600;
+}
+
+.Green_Section {
+    stroke: #05AE2D;
+}
+
+.Black_Section {
+    stroke: #140B0D;
+}
+
+.White_Section {
+    stroke: #F9DEBB;
+}*/
+
+.hit:hover, .hit:focus {
+    fill: pink;
+    stroke: pink;
+}
+.wire:hover {
+    stroke: cyan;
+}
+/*svg {
+    margin-right: 10px;
+    width: auto;
+}*/
+
+#score {
+    text-align: center;
+    font-size: 40px;
+}
+
+.current_darts {
+    border-color: white;
+    border: solid;
+    border-width: 0.25px;
+    background-color: #D5D5D5;
+    border-radius: 10px;
+    text-align: center;
+    height: 20px;
+    width: 40px;
+}
+
+.current_darts:hover{
+    background-color: pink;
+}
+
+.previous_darts {
+    border-color: white;
+    border: solid;
+    border-width: thin;
+    color: grey;
+    background-color: #424242;
+    border-radius: 10px;
+    text-align: center;
+    height: 20px;
+    width: 40px;
+}
+
+.total_visit_score{
+    border-radius: 10px;
+    text-align: center;
+}
+
+#current_visit_score{
+    background-color: #929292;
+    height: 20px;
+    width: 40px;
+}
+
+#previous_visit_score{
+    background-color: #212121;
+    color: grey;
+    height: 20px;
+    width: 40px;
+}
+
+.dart_heading{
+    font-size: 12px;
+}
+
+/* Decoration */
+/*#container{
+    text-align: center;
+}
+
+#stats_container{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.decorator{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}*/
+
+
+/*div containing slider*/
+#stats_toggle_buttons{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#button_for_heatmap{
+    visibility: visible;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+#button_for_heatmap:hover{
+    background-color: red;
+    transition: 0.2s;
+}
+
+#heatmap_image{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+/*#canvas_wrap {
+    position: relative;
+    text-align: center;
+}*/
+
+/*#stats_container{
+    position: absolute;
+    top:0px;
+    left: 0px;
+}*/
+
+#submit_score{
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #001932;
+    color: white;
+}
+
+#submit_score:hover{
+    background-color: cyan;
+    color: #001932;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#warning{
+    position: absolute;
+    font-size: 50px;
+    bottom: 40px;
+    background-color: white;
+    border-radius: 30px;
+    z-index: 99999;
+}
+
+#all_time_heatmap_button{
+    visibility: hidden;
+    position: absolute;
+    right: 90px;
+    top: 40px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: grey;
+}
+
+#first_dart_button{
+    visibility: hidden;
+    position: absolute;
+    right: 93px;
+    top: 7px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+
+}
+
+#second_dart_button{
+    visibility: hidden;
+    position: absolute;
+    right: 62px;
+    top: 7px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+
+}
+
+#third_dart_button{
+    visibility: hidden;
+    position: absolute;
+    right: 31px;
+    top: 7px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+
+}
+
+#calendar_options{
+    visibility: hidden;
+    position: absolute;
+    width: 200px;
+    right: 50%;
+    background-color: #CADAED;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.stats_button:hover{
+    color: white;
+}
+
+#first_nine_darts_button{
+    visibility: hidden;
+    position: absolute;
+    right: 31px;
+    top: 87px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+
+}
+
+#button_for_more_stats{
+    visibility: visible;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+
+#button_for_settings{
+    visibility: visible;
+    position: absolute;
+    right: 20px;
+    bottom: 80px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+#button_for_log_out{
+    visibility: visible;
+    position: absolute;
+    right: 80px;
+    bottom: 20px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.permanent_button:hover{
+    background-color: black;
+    transition: 0.2s;
+}
+
+.permanent_button{
+    background-color: white;
+}
+
+
+.aim_at_dart{
+    border: white;
+    background-color: #009051;
+    border-radius: 50%;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+}
+
+#darts_thrown_container{
+    position: absolute;
+    color: white;
+    left: 10px;
+    top: 10px;
+}
+
+#darts_thrown_image{
+
+    height: 20px;
+}
+
+#log_out_box{
+    position: absolute;
+    visibility: hidden;
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    color: grey;
+    background-color: #D5D5D5;
+    border: solid;
+    border-color: black;
+    border-width: thin;
+    top: 30%;
+    left: 30%;
+    border-radius: 20px;
+}
+
+/*.log_out_box_button{
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+*/
+
+#log_out_accept{
+    background-color: grey;
+    color: white;
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    position: absolute;
+    top: 35%;
+    left: 17.5%;
+}
+
+#log_out_reject{
+    background-color: grey;
+    color: white;
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    position: absolute;
+    top: 35%;
+    right: 17.5%;
+}
+
+#log_out_reject:hover{
+    background-color: white;
+}
+
+#log_out_accept:hover{
+    background-color: white;
+}
+
+#more_statistics_box{
+    position: absolute;
+    visibility: hidden;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    color: grey;
+    background-color: #D5D5D5;
+    border: solid;
+    border-color: black;
+    border-width: thin;
+    top: 10%;
+    left: 10%;
+    border-radius: 20px;
+}
+
+#number_of_scores_table{
+    width: 20%;
+    margin-left: 40%;
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.three_dart_scores_heading{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 25%;
+    background-color: grey;
+    color: black;
+}
+
+.three_dart_scores{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+#statistics_box_close{
+    position: absolute;
+    width: 3%;
+    height: auto;
+    border-radius: 50%;
+    top: 2%;
+    right: 2%;
+    background-color: grey;
+}
+
+#statistics_box_close:hover{
+    background-color: white;
+}
+
+#settings_box{
+    position: absolute;
+    visibility: hidden;
+    width: 40%;
+    height: 80%;
+    text-align: center;
+    color: grey;
+    background-color: #D5D5D5;
+    border: solid;
+    border-color: black;
+    border-width: thin;
+    top: 10%;
+    left: 5%;
+    border-radius: 20px;
+}
+
+#settings_box_close{
+    position: absolute;
+    width: 3%;
+    height: auto;
+    border-radius: 50%;
+    top: 2%;
+    right: 2%;
+    background-color: grey;
+}
+
+#settings_box_close:hover{
+    background-color: white;
+}
+
+#change_aim_setting{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+}
+
+#change_aim_setting:hover{
+    background-color: #006496;
+    color: white;
+}
+
+#aim_settings_number{
+    visibility:hidden;
+}
+
+#aim_settings_dropdown{
+    visibility:hidden;
+}
+
+
+#label_for_start_date{
+    float: left;
+}
+#label_for_end_date{
+    float: left;
+}
+
+
+#turn_on_calendar_button:hover{
+    background-color: white;
+    transition: 0.2s;
+}
+
+#turn_on_calendar_button{
+    background-color: black;
+    visibility: hidden;
+    position: absolute;
+    right: 70px;
+    top: 75px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}

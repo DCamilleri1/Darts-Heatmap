@@ -1,0 +1,83 @@
+<head>
+    <style>
+        #nav_bar{
+            height: 60px;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background-color: #006496;
+            color: white;
+        }
+        #darts_heatmap{
+            position: absolute;
+            left: 20px;
+            font-size: 30px;
+            margin-top: 15px;
+        }
+        #login_here{
+            position: absolute;
+            right: 120px;
+        }
+        #register_here{
+            position: absolute;
+            right: 60px;
+        }
+        a:link{
+            color: white;
+            text-decoration: none;
+        }
+        #login_here:hover{
+            text-decoration: underline;
+        }
+
+        #register_here:hover{
+            text-decoration: underline;
+        }
+        a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        body{
+            background-color: #001932;
+        }
+        #apology{
+            color: white;
+            font-size: 40px;
+        }
+        #caption{
+            color: grey;
+            font-size: 10px;
+        }
+        #the_rest{
+            position: absolute;
+            top: 90px;
+            text-align: center;
+            width: 100%;
+        }
+        #bounce_out{
+            border-style: solid;
+            border-color: white;
+            border-width: thin;
+            margin: auto;
+        }
+    </style>
+    <title>
+        {{ bottom }}
+    </title>
+</head>
+<body>
+    <div id="nav_bar">
+        <p id="darts_heatmap"><a href="/">Darts HeatMap</a></p>
+        <div id="login_and_register">
+            <p id="login_here"><a href="/login">Login</a></p>
+            <p id="register_here"><a href="/register">Register</a></p>
+        </div>
+    </div>
+    <div id="the_rest">
+        <!--<img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/CsCgN7Ll.png" title="{{ top }}">-->
+        <img id="bounce_out" alt="{{ top }}" class="border" src="/static/apology.gif" title="{{ top }}">
+        <p id = "apology">{{ bottom }}</p>
+        <p id="caption">See darts differently.</p>
+    </div>
+</body>
+

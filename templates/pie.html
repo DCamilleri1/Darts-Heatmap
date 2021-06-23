@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="/static/pie.css" rel="stylesheet">
+        <script type="text/javascript" src="/static/Scoring.js"></script>
+        <title id="title">Game On!</title>
+    </head>
+
+    <body>
+        <p id="warning"></p>
+        <!--The dart board-->
+        <div id="container" style="text-align:center;"/>
+            <script type="text/javascript" src="/static/The_Board.js"></script>
+        </div>
+         <!--The buttons atop the page-->
+         <div id="container_for_option_buttons">
+            <input id ="button_for_heatmap" type = "image" src="/static/Heatmap_Image.png">
+            <input id ="all_time_heatmap_button" class="stats_button" type ="button" value="OFF">
+            <input id ="first_dart_button" class="stats_button individual_darts_button" type ="button" value="1">
+            <input id ="second_dart_button" class="stats_button individual_darts_button" type ="button" value="2">
+            <input id ="third_dart_button" class="stats_button individual_darts_button" type ="button" value="3">
+            <input id ="first_nine_darts_button" class="stats_button individual_darts_button" type ="button" value="9">
+            <input id ="turn_on_calendar_button" class="stats_button " type ="image" src="/static/Calendar.png">
+            <input id ="button_for_more_stats" class="permanent_button" type = "image" src="/static/Statistics.png">
+            <input id ="button_for_settings" class="permanent_button" type = "image" src="/static/Settings.png">
+            <input id ="button_for_log_out" class="permanent_button" type = "image" src="/static/Log_out.png">
+            <form id = "calendar_options">
+                <label id="label_for_start_date" for="button_for_start_date">Start Date:</label>
+                <input id ="button_for_start_date" type="date">
+                <br>
+                <label id="label_for_end_date" for="button_for_end_date">End Date:</label>
+                <input id ="button_for_end_date" type="date">
+                <br>
+                <button id = "apply_dates" type="button">Apply</button>
+            </form>
+
+                <!--<img src="Heatmap_Image.png" alt="Button for heatmap" id="heatmap_image">-->
+        </div>
+        <div id="canvas_wrap">
+            <div class="boxes" id="stats_container">
+                <p id="darts_thrown_container">(<span id="darts_thrown">0</span>)<img id="darts_thrown_image" src="/static/Darts.png"></p>
+                <p id="score"></p>
+                <p id="checkout_route"></p>
+                <table>
+                    <tr>
+                        <th class="dart_heading">Dart 1</th>
+                        <th class="dart_heading">Dart 2</th>
+                        <th class="dart_heading">Dart 3</th>
+                    </tr>
+                    <tr>
+                        <td id ="aim_at_dart1" class="aim_at_dart"></td>
+                        <td id ="aim_at_dart2" class="aim_at_dart"></td>
+                        <td id ="aim_at_dart3" class="aim_at_dart"></td>
+                    </tr>
+                    <tr>
+                        <td class = "current_darts" id = "dart1"></td>
+                        <td class = "current_darts" id = "dart2"></td>
+                        <td class = "current_darts" id = "dart3"></td>
+                        <td class = "total_visit_score" id = "current_visit_score"></td>
+                    </tr>
+                    <tr>
+                        <td class = "previous_darts" id = "old_dart1"></td>
+                        <td class = "previous_darts" id = "old_dart2"></td>
+                        <td class = "previous_darts" id = "old_dart3"></td>
+                        <td class = "total_visit_score" id = "previous_visit_score"></td>
+                    </tr>
+                </table>
+                <br>
+                <p>Average: <span id ="3dart_average"></span></p>
+                <p>First 9 dart average: <span id ="first_9_dart_average"></span></p>
+                <p>Top score: <span id ="highest_score"></span></p>
+                <p>Highest checkout: <span id ="highest_checkout"></span></p>
+
+                <p id="check1"></p>
+                <p id="check2"></p>
+                <p id="check3"></p>
+                <div id="submit_score_button_div">
+                    <button id = "submit_score" type="button">Submit!</button>
+                </div>
+            </div>
+        </div>
+        <!--Logout Box Pop up-->
+        <div id="log_out_box">
+            <p>Are you sure you want to log out?</p>
+            <a href="/logout"><input id ="log_out_accept" class="log_out_box_button" type = "image" src="/static/Tick.png"></a>
+            <input id ="log_out_reject" class="log_out_box_button" type = "image" src="/static/Cross.png">
+        </div>
+        <!--More Statistics Pop up-->
+        <div id="more_statistics_box">
+            <p class="inside_more_statistics_box">Average: <span id="3dart_average_more_box" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">First 9 dart average: <span id ="first_9_dart_average_more_box" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">Top score: <span id ="highest_score_more_box" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">Highest checkout: <span id ="highest_checkout_more_box" class="inside_more_statistics_box"></span></p>
+            <br>
+            <p class="inside_more_statistics_box">1st dart average: <span id="first_dart_average" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">2nd dart average: <span id="second_dart_average" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">3rd dart average: <span id="third_dart_average" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">Misses/bounceouts: <span id="misses_bounce_outs" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">Checkout percentage: <span id="checkout_percentage" class="inside_more_statistics_box"></span>%</p>
+            <p class="inside_more_statistics_box">Darts lost to bust: <span id="darts_lost_to_bust" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">Most hit double: <span id="most_hit_double" class="inside_more_statistics_box"></span></p>
+            <p class="inside_more_statistics_box">Best checkout percentage double: <span id="best_checkout_percentage_double"></span></p>
+            <table id="number_of_scores_table">
+                <tr>
+                    <th class="inside_more_statistics_box three_dart_scores_heading">60+</th>
+                    <th class="inside_more_statistics_box three_dart_scores_heading">100+</th>
+                    <th class="inside_more_statistics_box three_dart_scores_heading">140+</th>
+                    <th class="inside_more_statistics_box three_dart_scores_heading">180</th>
+                </tr>
+                <tr>
+                    <td class="inside_more_statistics_box three_dart_scores" id="number_of_60s"></td>
+                    <td class="inside_more_statistics_box three_dart_scores" id="number_of_100s"></td>
+                    <td class="inside_more_statistics_box three_dart_scores" id="number_of_140s"></td>
+                    <td class="inside_more_statistics_box three_dart_scores" id="number_of_180s"></td>
+                </tr>
+            </table>
+            <input id ="statistics_box_close" type = "image" src="/static/Cross.png">
+        </div>
+        <!--Settings Pop up-->
+        <div id="settings_box">
+            <p class="inside_settings_box">Default Aim Target: <span id="default_aim_target_setting" class="inside_settings_box"></span><span id="change_aim_setting" class="inside_settings_box">Change?</span></p>
+            <select id="aim_settings_dropdown" class="inside_settings_box" onchange="settingsDropDownHide()">
+                <option value="T">Triple</option>
+                <option value="D">Double</option>
+                <option value="OS">Outer Single</option>
+                <option value="IS">Inner Single</option>
+                <option value="OB">Outer Bull</option>
+                <option value="IB">Inner Bull</option>
+            </select>
+            <input type="number" id="aim_settings_number" class="inside_settings_box" name="aim_settings_number" min="1" max="20">
+            <p class="inside_settings_box">Colour Theme: <span id ="colour_theme_setting" class="inside_settings_box"></span></p>
+            <br>
+            <p class="inside_settings_box">Dartboard Divisions: <span id ="dartboard_division_setting" class="inside_settings_box"></span></p>
+            <button id = "apply_settings" type="button">Apply</button>
+            <input id ="settings_box_close" type = "image" src="/static/Cross.png">
+        </div>
+    </body>
+</html>
+
+
